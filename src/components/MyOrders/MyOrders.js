@@ -7,13 +7,13 @@ const MyOrders = () => {
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrders/${email}`)
+    fetch(`https://protected-atoll-20953.herokuapp.com/myOrders/${email}`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [control,services] );
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/delteOrder/${id}`, {
+    fetch(`https://protected-atoll-20953.herokuapp.com/delteOrder/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

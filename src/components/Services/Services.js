@@ -8,13 +8,13 @@ const Services = () => {
   const[service,setService]= useState(false)
 
   useEffect(() => {
-    fetch("http://localhost:5000/allServices")
+    fetch("https://protected-atoll-20953.herokuapp.com/allServices")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [services,service]);
 
   const handleDeleteService = (id) => {
-    fetch(`http://localhost:5000/delteServices/${id}`, {
+    fetch(`https://protected-atoll-20953.herokuapp.com/delteServices/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

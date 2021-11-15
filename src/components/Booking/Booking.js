@@ -9,7 +9,7 @@ const Booking = () => {
 
   const email = sessionStorage.getItem("email");
   useEffect(() => {
-    fetch(`http://localhost:5000/singleProduct/${serviceId}`)
+    fetch(`https://protected-atoll-20953.herokuapp.com/singleProduct/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -26,7 +26,7 @@ const Booking = () => {
     data.email = email;
     data.status = "pending";
 
-    fetch("http://localhost:5000/confirmOrder", {
+    fetch("https://protected-atoll-20953.herokuapp.com/confirmOrder", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

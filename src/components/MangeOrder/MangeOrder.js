@@ -11,14 +11,14 @@ const MangeOrder = () => {
   };
   console.log(status);
   useEffect(() => {
-    fetch("http://localhost:5000/allOrders")
+    fetch("https://protected-atoll-20953.herokuapp.com/allOrders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [status,orders]);
 
   // const status = "apporved";
   const handleUpdate = (id) => {
-    fetch(`http://localhost:5000/updateStatus/${id}`, {
+    fetch(`https://protected-atoll-20953.herokuapp.com/updateStatus/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ status }),
@@ -28,7 +28,7 @@ const MangeOrder = () => {
   };
 
   const handleDeleteOrder = (id) => {
-    fetch(`http://localhost:5000/delteOrder/${id}`, {
+    fetch(`https://protected-atoll-20953.herokuapp.com/delteOrder/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

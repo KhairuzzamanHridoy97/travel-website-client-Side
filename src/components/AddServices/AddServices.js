@@ -13,7 +13,7 @@ const AddServices = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/addServices", {
+    fetch("https://protected-atoll-20953.herokuapp.com/addServices", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
